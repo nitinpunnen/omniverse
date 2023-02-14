@@ -16,7 +16,6 @@ import EditTextContent from "../dialogs/EditTextContent/EditTextContent";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFileExport, faPenToSquare} from "@fortawesome/free-solid-svg-icons";
 import {TextField} from "@aws-amplify/ui-react";
-import SearchDocuments from "../AuditCompliance/SearchDocuments";
 import SearchDocumentContent from "../dialogs/SearchDocumentContent/SearchDocumentContent";
 
 const AssembleDocuments = () => {

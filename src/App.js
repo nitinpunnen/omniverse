@@ -50,7 +50,7 @@ const App = ({signOut}) => {
                                 <Link className="Navbar-Item" to="/auditCompliance">Audit & Compliance</Link>
                                 <Link className="Navbar-Item" to="/assemble">Assemble</Link>
                             </Flex>
-                            <Heading level={3} style={{flexGrow: 3, color: "white"}}>Assemblr</Heading>
+                            <Heading level={3} style={{flexGrow: 3, color: "white"}}>Omniverse</Heading>
                         </Flex>
                     </Flex>
                     <Routes>

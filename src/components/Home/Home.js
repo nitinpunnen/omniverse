@@ -14,7 +14,7 @@ const Home = () => {
         <View className="Home">
             <Flex direction={{base: 'row', large: 'row'}} className="video-container">
                 <div className="intro">
-                    <Heading level={1} className="heading">Assemblr - PoC</Heading>
+                    <Heading level={1} className="heading">Omniverse</Heading>
                     <span className="short-desc">Automate the creation of your operational and technical documents without any technical expertise. </span>
                     <span className="short-desc">Powerful search engine build on machine learning capabilities to provide accurate contextual results. </span>
                 </div>
