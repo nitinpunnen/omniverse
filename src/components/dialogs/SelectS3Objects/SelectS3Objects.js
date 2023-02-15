@@ -60,14 +60,14 @@ const SelectS3Objects = forwardRef((props, ref) => {
     };
 
     async function fetchDocuments() {
-        const response = await API.get('assemblrBucketDetails', '/assemblr/listbucket', {
-            headers: {},
-            response: true
-        });
-        const folders = response.data.folders;
-        const files = response.data.files;
-        setFiles(files);
-        setFolders(folders)
+        // const response = await API.get('assemblrBucketDetails', '/assemblr/listbucket', {
+        //     headers: {},
+        //     response: true
+        // });
+        // const folders = response.data.folders;
+        // const files = response.data.files;
+        // setFiles(files);
+        // setFolders(folders)
     }
 
     function MinusSquare(props) {

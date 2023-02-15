@@ -26,17 +26,17 @@ const DocumentScan = () => {
         const documentKey = selectedDocuments[0].Key;
         console.log("Audit Program ", [documentKey]);
 
-        const response = await API.post('assemblrBucketDetails', '/assemblr/signedUrl', {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            response: true,
-            body: [documentKey]
-        });
-        // Will return only one signed url for document scan
-        const signedUrl = response.data.signed_urls[0];
-        setSignedUrl(signedUrl)
-        console.log(signedUrl)
+        // const response = await API.post('assemblrBucketDetails', '/assemblr/signedUrl', {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     response: true,
+        //     body: [documentKey]
+        // });
+        // // Will return only one signed url for document scan
+        // const signedUrl = response.data.signed_urls[0];
+        // setSignedUrl(signedUrl)
+        // console.log(signedUrl)
     };
 
     return (

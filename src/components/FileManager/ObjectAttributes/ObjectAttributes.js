@@ -10,20 +10,20 @@ const ObjectAttributes = forwardRef((props, documentRef) => {
 
     let [docProps, setDocProps] = useState({});
 
-    useImperativeHandle(documentRef, () => ({
-        async updateMetadata(selectedDocument) {
-            const response = await API.post('assemblrBucketDetails', '/assemblr/objectMetadata', {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                response: true,
-                body: {filename: selectedDocument}
-            });
-            // console.log(response)
-            const docProps = response.data.result.Attributes;
-            setDocProps(docProps)
-        }
-    }));
+    // useImperativeHandle(documentRef, () => ({
+    //     async updateMetadata(selectedDocument) {
+    //         const response = await API.post('assemblrBucketDetails', '/assemblr/objectMetadata', {
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             response: true,
+    //             body: {filename: selectedDocument}
+    //         });
+    //         // console.log(response)
+    //         const docProps = response.data.result.Attributes;
+    //         setDocProps(docProps)
+    //     }
+    // }));
 
     const handleFormEdit = (event) => {
         setDocProps({...docProps, [event.target.name] : event.target.value});

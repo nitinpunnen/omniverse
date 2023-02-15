@@ -49,13 +49,13 @@ const UploadFile = (props) => {
                         // Adding data to DocumentDB
                         metadataJson["EventType"] = "NewDocument";
                         console.log("metadataJson ", metadataJson);
-                        await API.post('assemblrBucketDetails', '/assemblr/updateMetadata', {
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            response: true,
-                            body: metadataJson
-                        });
+                        // await API.post('assemblrBucketDetails', '/assemblr/updateMetadata', {
+                        //     headers: {
+                        //         'Content-Type': 'application/json',
+                        //     },
+                        //     response: true,
+                        //     body: metadataJson
+                        // });
                     } catch (error) {
                         console.error(error);
                     }
