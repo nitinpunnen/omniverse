@@ -103,8 +103,7 @@ const AssembleDocuments = () => {
                                 setDocumentType(e.target.value)
                             }}>
                             <option value=""></option>
-                            <option value="offerLetter">Offer Letter</option>
-                            <option value="employmentContract">Employment Contract</option>
+                            <option value="employmentContract">Insurance Contract</option>
                             <option value="customDocument">Custom Document</option>
                         </SelectField>
                     </Flex>
@@ -112,46 +111,38 @@ const AssembleDocuments = () => {
                         <Button onClick={handleSearchDocumentContent}>
                             <span>Search Document Content</span>
                         </Button>
-                    </Flex>}
-                    {documentType === 'offerLetter' &&
-                        <Expander type="single" isCollapsible={true} height="700px" overflow="auto">
-                            <Heading level={6} style={{textAlign: "center"}}>Offer Letter</Heading>
-                            <ExpanderItem title="Properties" value="demo-item-1">
-                                <TextField name="dataSource" value={documentAttributes.dataSource}
-                                           onChange={handleFormEdit}/>
-                            </ExpanderItem>
-                        </Expander>}
+                    </Flex>}                    
                     {documentType === 'employmentContract' &&
                         <Expander type="single"
                                   isCollapsible={true} height="700px" overflow="auto">
-                            <Heading level={6} style={{textAlign: "center"}}>Employment Contract</Heading>
+                            <Heading level={6} style={{textAlign: "center"}}>Insurance Contract</Heading>
                             <ExpanderItem title="General Information" value="generalInformation">
                                 <Flex
                                     direction={{base: 'column'}} padding="10px 20px 10px 0" gap="5px">
                                     <TextField
-                                        placeholder="Employer Name" value={documentAttributes.employerName}
+                                        placeholder="Insurer Name" value={documentAttributes.InsurerName}
                                         onChange={handleFormEdit}
-                                        label="Employer Details" name="employerName"/>
+                                        label="Insurer Details" name="InsurerName"/>
                                     <TextField
-                                        name="employerAddress" placeholder="Employer address"
-                                        value={documentAttributes.employerAddress}
+                                        name="InsurerAddress" placeholder="Insurer address"
+                                        value={documentAttributes.InsurerAddress}
                                         onChange={handleFormEdit}
                                     />
                                     <Flex
                                         direction={{base: 'row'}}>
                                         <TextField
-                                            name="employerCity" placeholder="City"
-                                            value={documentAttributes.employerCity}
+                                            name="InsurerCity" placeholder="City"
+                                            value={documentAttributes.InsurerCity}
                                             onChange={handleFormEdit}
                                         />
                                         <TextField
-                                            name="employerPostalCode" placeholder="Postal Code"
-                                            value={documentAttributes.employerPostalCode}
+                                            name="InsurerPostalCode" placeholder="Postal Code"
+                                            value={documentAttributes.InsurerPostalCode}
                                             onChange={handleFormEdit}
                                         />
                                     </Flex>
                                     <RadioGroupField
-                                        label="Is the Employee female or male"
+                                        label="Is the Insuree female or male"
                                         name="gender"
                                         direction="row"
                                         onChange={handleFormEdit}
@@ -160,37 +151,37 @@ const AssembleDocuments = () => {
                                         <Radio value="Mrs">Female</Radio>
                                     </RadioGroupField>
                                     <TextField
-                                        placeholder="Employee Name" value={documentAttributes.employeeName}
+                                        placeholder="Insuree Name" value={documentAttributes.InsureeName}
                                         onChange={handleFormEdit}
-                                        label="Employee Details" name="employeeName"/>
+                                        label="Insuree Details" name="InsureeName"/>
                                     <TextField
-                                        name="employeeAddress" placeholder="Employee address"
-                                        value={documentAttributes.employeeAddress}
+                                        name="InsureeAddress" placeholder="Insuree address"
+                                        value={documentAttributes.InsureeAddress}
                                         onChange={handleFormEdit}
                                     />
                                     <Flex
                                         direction={{base: 'row'}}>
                                         <TextField
-                                            name="employeeCity" placeholder="City"
-                                            value={documentAttributes.employeeCity}
+                                            name="InsureeCity" placeholder="City"
+                                            value={documentAttributes.InsureeCity}
                                             onChange={handleFormEdit}
                                         />
                                         <TextField
-                                            name="employeePostalCode" placeholder="Postal Code"
-                                            value={documentAttributes.employeePostalCode}
+                                            name="InsureePostalCode" placeholder="Postal Code"
+                                            value={documentAttributes.InsureePostalCode}
                                             onChange={handleFormEdit}
                                         />
                                     </Flex>
                                 </Flex>
                             </ExpanderItem>
-                            <ExpanderItem title="Commencement of Employment" value="commencementOfEmployment">
-                                <Text>When should the employment relationship begin</Text>
+                            <ExpanderItem title="Commencement of Insurance" value="commencementOfEmployment">
+                                <Text>When should the relationship begin</Text>
                                 <TextField
-                                    name="employeeStartDate" placeholder="Start Date"
-                                    value={documentAttributes.employeeStartDate}
+                                    name="InsureeStartDate" placeholder="Start Date"
+                                    value={documentAttributes.InsureeStartDate}
                                     onChange={handleFormEdit}
                                 />
-                                <Text>How is the period of employment defined</Text>
+                                <Text>How is the period of insurance defined</Text>
                                 <RadioGroupField
                                     name="employmentPeriod"
                                     onChange={handleFormEdit}
@@ -208,8 +199,8 @@ const AssembleDocuments = () => {
                                     <Radio value="six months">six months</Radio>
                                 </RadioGroupField>
                             </ExpanderItem>
-                            <ExpanderItem title="Working Hours" value="workingHours">
-                                <Text>When should the employment relationship begin</Text>
+                            <ExpanderItem title="Termination Terms" value="workingHours">
+                                <Text>When should the relationship begin</Text>
                                 <TextField
                                     name="workingHours" placeholder="Working Hours"
                                     value={documentAttributes.workingHours}
@@ -257,25 +248,25 @@ const AssembleDocuments = () => {
                         Offer Letter
                         </pre>}
                         {documentType === 'employmentContract' && <pre onMouseUp={handleMouseUp}>
-                            <h3 style={{textAlign: "center"}}>Employment Contract</h3>
-                            Between<br/>{documentAttributes.employerName}<br/>
-                            {documentAttributes.employerAddress}<br/>{documentAttributes.employerCity}, {documentAttributes.employerPostalCode}<br/>
+                            <h3 style={{textAlign: "center"}}>Insurance Contract</h3>
+                            Between<br/>{documentAttributes.InsurerName}<br/>
+                            {documentAttributes.InsurerAddress}<br/>{documentAttributes.InsurerCity}, {documentAttributes.InsurerPostalCode}<br/>
 
-                            And<br/>{documentAttributes.gender}. {documentAttributes.employeeName}<br/>
-                            {documentAttributes.employeeAddress}<br/>{documentAttributes.employeeCity}, {documentAttributes.employeePostalCode}<br/>
+                            And<br/>{documentAttributes.gender}. {documentAttributes.InsureeName}<br/>
+                            {documentAttributes.InsureeAddress}<br/>{documentAttributes.InsureeCity}, {documentAttributes.InsureePostalCode}<br/>
 
                             has been agreed as follows: <br/><br/>
 
-                            <h4>Commencement of Employment</h4><br/>
-                            <span>The employment commences with effect from {documentAttributes.employeeStartDate}. The appointment is being agreed for {documentAttributes.employmentPeriod}.
+                            <h4>Commencement of Insurance</h4><br/>
+                            <span>The employment commences with effect from {documentAttributes.InsureeStartDate}. The appointment is being agreed for {documentAttributes.employmentPeriod}.
                                 A termination prior to taking up employment duties is not permitted. The first {documentAttributes.probationaryPeriod} of the employment relationship are considered
                                 a probationary period. During the probationary period the appointment can be terminated by two weeks notice.
                                 After expiry of the probationary period, the employment relationship may be terminated in accordance with the statutory periods of notice.
-                                A legally extended period also applies to termination by the employee.</span>
-                            <h4>Working Hours</h4><br/>
+                                A legally extended period also applies to termination by the Insuree.</span>
+                            <h4>Termination Terms</h4><br/>
                             <span>The regular working hours are {documentAttributes.workingHours} hours per week.
                                 The times at which the daily work will commence and finish as well as work breaks will be determined according to the operational requirements.
-                                In {documentAttributes.employeeName}’s occupation overtime may be required. {documentAttributes.employerName} can require from {documentAttributes.employeeName} to work overtime to a reasonable amount.
+                                In {documentAttributes.InsureeName}’s occupation overtime may be required. {documentAttributes.InsurerName} can require from {documentAttributes.InsureeName} to work overtime to a reasonable amount.
                                 The amount of overtime is reasonable on all accounts,
                                 if it does not exceed {documentAttributes.overtime} percentage of reasonable amount of overtime of the usual work time..
                             </span>
