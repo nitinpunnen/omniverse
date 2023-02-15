@@ -1,3 +1,11 @@
-.Home {
-    margin: 0 auto;
+.vertical-tab {
+    text-align: left !important;    
+    align-items: flex-start !important;
+}
+.vertical-tab-panel {
+    width: 100%;
+}
+
+.highchart-container {
+    border: 1px solid lightgray;
 }
