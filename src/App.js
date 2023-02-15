@@ -12,7 +12,8 @@ import AssembleDocuments from "./components/AssembleDocuments/AssembleDocuments"
 import AuditCompliance from "./components/AuditCompliance/AuditCompliance";
 import FileManager from "./components/FileManager/FileManager";
 import Home from "./components/Home/Home";
-
+import QuoteApply from "./components/QuoteApply/QuoteApply";
+import AgentDashboard from "./components/AgentDashboard/AgentDashboard";
 
 const App = ({ signOut }) => {
     const appTheme = createTheme({
@@ -55,6 +56,8 @@ const App = ({ signOut }) => {
                     </Flex>
                     <Routes>
                         <Route exact path="/" element={<Home />} />
+                        <Route exact path="/dashboard" element={<AgentDashboard />} />
+                        <Route exact path="/quoteApply" element={<QuoteApply />} />
                         <Route exact path="/auditCompliance" element={<AuditCompliance />} />
                         <Route exact path="/uploadFiles" element={<FileManager />} />
                         <Route exact path="/assemble" element={<AssembleDocuments />} />

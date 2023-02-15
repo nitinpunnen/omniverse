@@ -1,10 +1,7 @@
 import * as React from 'react';
 import {Button, Expander, ExpanderItem, Flex, CheckboxField, Heading} from "@aws-amplify/ui-react";
-import {forwardRef, useEffect, useState} from "react";
-import {EditorState} from "draft-js";
-import {Editor} from "react-draft-wysiwyg";
+import {forwardRef, useState} from "react";
 import "./SearchDocumentContent.css";
-import {convertFromRaw} from 'draft-js';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {TextField} from "@mui/material";
 

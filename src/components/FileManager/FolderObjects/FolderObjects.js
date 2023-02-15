@@ -6,7 +6,6 @@ import {faUpload} from "@fortawesome/free-solid-svg-icons";
 import UploadFile from "../UploadFile/UploadFile";
 import {forwardRef, useImperativeHandle, useState} from "react";
 import {DataGrid} from '@mui/x-data-grid';
-import {Storage} from "aws-amplify";
 
 const FolderObjects = forwardRef((props, ref) => {
     useImperativeHandle(ref, () => ({
@@ -51,10 +50,6 @@ const FolderObjects = forwardRef((props, ref) => {
         // setDocuments(props.allfiles[folderName]);
     }
 
-    async function deleteNote({id, fileName}) {
-        await Storage.remove(fileName);
-        await Storage.remove(fileName + '.metadata.json');
-    }
 
     return (
         <Flex

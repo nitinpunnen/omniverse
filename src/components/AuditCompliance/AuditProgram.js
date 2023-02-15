@@ -1,11 +1,9 @@
 import React, {useRef, useState} from 'react';
 import './AuditCompliance.css';
-import {Button, Card, CheckboxField, Flex, Heading, SearchField, SelectField, Text} from "@aws-amplify/ui-react";
-import {API} from "aws-amplify";
-import {faFileCircleCheck, faThumbsDown, faThumbsUp, faUpload} from "@fortawesome/free-solid-svg-icons";
+import {Button, CheckboxField, Flex, Text} from "@aws-amplify/ui-react";
+import {faFileCircleCheck} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Box, Dialog, DialogActions, DialogContent, DialogTitle, Tab} from "@mui/material";
-import {TabContext, TabList, TabPanel} from "@mui/lab";
+import {Dialog, DialogActions, DialogContent, DialogTitle} from "@mui/material";
 import SelectS3Objects from "../dialogs/SelectS3Objects/SelectS3Objects";
 import {DataGrid} from "@mui/x-data-grid";
 import temp from "../../assets/Capture.png";

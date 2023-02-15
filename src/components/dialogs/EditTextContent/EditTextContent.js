@@ -1,10 +1,9 @@
 import * as React from 'react';
 import {Flex} from "@aws-amplify/ui-react";
-import {forwardRef, useEffect, useState} from "react";
+import {forwardRef, useState} from "react";
 import {EditorState} from "draft-js";
 import {Editor} from "react-draft-wysiwyg";
 import "./EditTextContent.css";
-import { convertFromRaw } from 'draft-js';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const EditTextContent = forwardRef((props, ref) => {

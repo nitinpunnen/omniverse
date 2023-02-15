@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './AuditCompliance.css';
-import {Card, CheckboxField, Flex, Heading, SearchField, SelectField, Text} from "@aws-amplify/ui-react";
-import {API} from "aws-amplify";
-import {faThumbsDown, faThumbsUp} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Flex, Text} from "@aws-amplify/ui-react";
 import {Box, Tab} from "@mui/material";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import DocumentScan from "./DocumentScan";

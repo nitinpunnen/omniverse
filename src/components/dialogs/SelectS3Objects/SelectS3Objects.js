@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {Button, Flex, Text} from "@aws-amplify/ui-react";
 import {forwardRef, useEffect, useImperativeHandle, useState} from "react";
-import {DataGrid, GridSelectionModel } from '@mui/x-data-grid';
+import {DataGrid } from '@mui/x-data-grid';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMaximize, faMinimize, faUpload} from "@fortawesome/free-solid-svg-icons";
+import {faMaximize, faMinimize} from "@fortawesome/free-solid-svg-icons";
 import TreeView from "@mui/lab/TreeView";
 import {API} from "aws-amplify";
 import SvgIcon from "@mui/material/SvgIcon";
