@@ -39,8 +39,10 @@
 
 .Navbar-Item {
   text-decoration: none;
-  color: white;
-  margin: 0 20px;
+  color: white !important;
+  font-size: 1rem !important;
+  margin: 0 10px;
+  text-transform: capitalize;
 }
 
 .Logo {

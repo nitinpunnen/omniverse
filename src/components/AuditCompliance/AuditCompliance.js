@@ -25,12 +25,12 @@ const AuditCompliance = () => {
                 <TabContext value={value}>
                     <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example" centered>
-                            <Tab label="Audit Document" value="2"/>
-                            <Tab label="Document Scan" value="3"/>
+                            <Tab label="Audit Document" value="1"/>
+                            <Tab label="Document Scan" value="2"/>
                         </TabList>
                     </Box>
-                    <TabPanel value="2"><AuditProgram/></TabPanel>
-                    <TabPanel value="3"><DocumentScan/></TabPanel>
+                    <TabPanel value="1"><AuditProgram/></TabPanel>
+                    <TabPanel value="2"><DocumentScan/></TabPanel>
                 </TabContext>
             </Box>
 

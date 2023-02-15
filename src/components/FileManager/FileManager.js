@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./FileManager.css";
 import "@aws-amplify/ui-react/styles.css";
-import {API, Storage} from 'aws-amplify';
+import {API} from 'aws-amplify';
 import {
     Button, Card,
     Flex,

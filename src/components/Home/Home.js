@@ -16,7 +16,7 @@ const Home = () => {
                 <div className="intro">
                     <Heading level={1} className="heading">Omniverse</Heading>
                     <span className="short-desc">Automate the creation of your operational and technical documents without any technical expertise. </span>
-                    <span className="short-desc">Powerful search engine build on machine learning capabilities to provide accurate contextual results. </span>
+                    <span className="short-desc">The industry leading multi-carrier quoting and eApplication for agents and their customers. Effectively compete with direct writers and captive distribution. </span>
                 </div>
             </Flex>
             <hr/>
@@ -25,6 +25,14 @@ const Home = () => {
                 width="70%"
                 style={{alignItems: "center", padding: "40px", margin: "0 auto", justifyContent: "space-between"}}
             >
+                <Link to="/quoteApply">
+                    <Card borderRadius="medium"
+                          variation="outlined">
+                        <FontAwesomeIcon icon={faUpload} size="2x" color="#22577A"/>
+                        <Heading level={5}>Quote & Apply</Heading>
+                        <Text>Quote. eSign. Done. The industry leading multi-carrier quoting and eApplication for agents and their customers. Effectively compete with direct writers and captive distribution. </Text>
+                    </Card>
+                </Link>
                 <Link to="/assemble">
                     <Card borderRadius="medium"
                           maxWidth="20rem"
@@ -40,17 +48,9 @@ const Home = () => {
                           variation="outlined">
                         <FontAwesomeIcon icon={faSearch} size="2x" color="#22577A"/>
                         <Heading level={5}>Audit & Compliance</Heading>
-                        <Text>Unified search experience across multiple structured and unstructured content repositories. Use natural language processing (NLP) to get highly accurate answers</Text>
+                        <Text>Use Machine Learning capabilities to validate your documents including signatures and content. Use natural language processing (NLP) to get highly accurate answers</Text>
                     </Card>
-                </Link>
-                <Link to="/uploadFiles">
-                    <Card borderRadius="medium"
-                          variation="outlined">
-                        <FontAwesomeIcon icon={faUpload} size="2x" color="#22577A"/>
-                        <Heading level={5}>Manage Files</Heading>
-                        <Text>Securely upload your files into Cloud Storage.Organize the files for easy retrieval in a highly available and durable storage.</Text>
-                    </Card>
-                </Link>
+                </Link>                
             </Flex>
         </View>
     );
