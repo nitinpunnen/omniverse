@@ -1,3 +1,11 @@
 .Home {
     margin: 0 auto;
 }
+
+.user-details {
+    min-height: 400px;
+}
+
+.MuiInputBase-input {
+    height: 3em !important;
+}
