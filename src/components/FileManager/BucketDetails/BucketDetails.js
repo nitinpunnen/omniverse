@@ -45,14 +45,14 @@ const BucketDetails = (props) => {
         const newFolder = valueRef.current.value;
         const parentDir = selected;
         try {
-            // await API.get('assemblrBucketDetails', '/assemblr/addFolder', {
-            //     headers: {},
-            //     response: true,
-            //     queryStringParameters: {
-            //         newFolder: newFolder,
-            //         parentDir: 'public/' + parentDir
-            //     }
-            // });
+            await API.get('omniversApi', '/api/addFolder', {
+                headers: {},
+                response: true,
+                queryStringParameters: {
+                    newFolder: newFolder,
+                    parentDir: 'public/' + parentDir
+                }
+            });
         }
         catch (e) {
             console.error(e);

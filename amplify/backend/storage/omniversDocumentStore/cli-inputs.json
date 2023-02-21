@@ -1,0 +1,14 @@
+{
+  "resourceName": "omniversDocumentStore",
+  "policyUUID": "31343d81",
+  "bucketName": "omnivers-document-store",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

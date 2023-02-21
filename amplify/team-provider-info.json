@@ -14,6 +14,30 @@
     "categories": {
       "auth": {
         "omniversee8305d7b": {}
+      },
+      "function": {
+        "omniversListBuckets": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/omniversListBuckets-424970634f51695a7443-build.zip"
+        },
+        "assemblrAddFolder": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/assemblrAddFolder-4f546d47324e7542625a-build.zip"
+        },
+        "getDocumentSignedURL": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/getDocumentSignedURL-6e5a3658504d76513542-build.zip"
+        },
+        "callTextract": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/callTextract-44487239734b35316770-build.zip"
+        }
+      },
+      "storage": {
+        "omniversDocumentStore": {}
+      },
+      "api": {
+        "omniversApi": {}
       }
     }
   }

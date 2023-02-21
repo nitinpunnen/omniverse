@@ -63,13 +63,12 @@ const App = ({ signOut, user }) => {
                             direction={{ base: 'row', large: 'row' }}
                             width="80%"
                             style={{ color: '#fff', margin: '0 auto', alignItems: "center" }}>
-                            <Heading level={3} style={{ flexGrow: 3, color: "white" }}>Omniverse</Heading>
+                            <Heading level={3} style={{ flexGrow: 3, color: "white" }}>Omnivers</Heading>
                             <Flex
                                 direction={{ base: 'row' }}
                                 style={{ alignItems: "center", margin: "0 auto" }}
                             >
-                                <Link className="Navbar-Item" to="/">HOME</Link>
-                                <Link className="Navbar-Item" to="/dashboard">DASHBOARD</Link>
+                                <Link className="Navbar-Item" to="/">HOME</Link>                                
                                 <Link className="Navbar-Item" to="/quoteApply">QUOTE & APPLY</Link>
                                 <Button className="Navbar-Item" id="basic-button"
                                     aria-controls={menuOpen ? 'basic-menu' : undefined}
@@ -95,6 +94,7 @@ const App = ({ signOut, user }) => {
                                         <Link to="/assemble">Assemble</Link>
                                     </MenuItem>
                                 </Menu>
+                                <Link className="Navbar-Item" to="/dashboard">DASHBOARD</Link>
                                 {user.username && <div>
                                     <Button aria-controls={avatarOpen ? 'basic-menu' : undefined}
                                         aria-haspopup="true"

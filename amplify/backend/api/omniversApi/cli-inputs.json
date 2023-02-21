@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/api/listBuckets": {
+      "name": "/api/listBuckets",
+      "lambdaFunction": "omniversListBuckets",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/api/addFolder": {
+      "name": "/api/addFolder",
+      "lambdaFunction": "assemblrAddFolder",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/api/signedUrl": {
+      "name": "/api/signedUrl",
+      "lambdaFunction": "getDocumentSignedURL",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/api/callTextract": {
+      "name": "/api/callTextract",
+      "lambdaFunction": "callTextract",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

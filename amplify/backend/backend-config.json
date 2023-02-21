@@ -1,4 +1,44 @@
 {
+  "api": {
+    "omniversApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "omniversListBuckets"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "assemblrAddFolder"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getDocumentSignedURL"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "callTextract"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "omniversee8305d7b": {
       "customAuth": false,
@@ -23,6 +63,102 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "assemblrAddFolder": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "callTextract": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getDocumentSignedURL": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "omniversListBuckets": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_assemblrAddFolder_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "assemblrAddFolder"
+        }
+      ]
+    },
+    "AMPLIFY_function_assemblrAddFolder_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "assemblrAddFolder"
+        }
+      ]
+    },
+    "AMPLIFY_function_callTextract_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "callTextract"
+        }
+      ]
+    },
+    "AMPLIFY_function_callTextract_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "callTextract"
+        }
+      ]
+    },
+    "AMPLIFY_function_getDocumentSignedURL_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getDocumentSignedURL"
+        }
+      ]
+    },
+    "AMPLIFY_function_getDocumentSignedURL_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getDocumentSignedURL"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversListBuckets_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversListBuckets"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversListBuckets_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversListBuckets"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "omniversDocumentStore": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }
