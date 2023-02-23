@@ -30,7 +30,19 @@
         },
         "callTextract": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/callTextract-44487239734b35316770-build.zip"
+          "s3Key": "amplify-builds/callTextract-454c71766356534a3842-build.zip"
+        },
+        "omniversSearchUser": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/omniversSearchUser-364d6651786749787149-build.zip"
+        },
+        "omniversGetUser": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/omniversGetUser-326d6a6a2f2b6b5a6742-build.zip"
+        },
+        "omniversUpsertUser": {
+          "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
+          "s3Key": "amplify-builds/omniversUpsertUser-505537574f645a74434b-build.zip"
         }
       },
       "storage": {

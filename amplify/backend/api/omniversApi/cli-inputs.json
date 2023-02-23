@@ -28,6 +28,27 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/api/searchUser": {
+      "name": "/api/searchUser",
+      "lambdaFunction": "omniversSearchUser",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/api/getUser": {
+      "name": "/api/getUser",
+      "lambdaFunction": "omniversGetUser",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/api/upsertUser": {
+      "name": "/api/upsertUser",
+      "lambdaFunction": "omniversUpsertUser",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

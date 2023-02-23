@@ -33,6 +33,30 @@
           ],
           "category": "function",
           "resourceName": "callTextract"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "omniversSearchUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "omniversGetUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "omniversUpsertUser"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -82,7 +106,22 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "omniversGetUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "omniversListBuckets": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "omniversSearchUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "omniversUpsertUser": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -137,6 +176,22 @@
         }
       ]
     },
+    "AMPLIFY_function_omniversGetUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversGetUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversGetUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversGetUser"
+        }
+      ]
+    },
     "AMPLIFY_function_omniversListBuckets_deploymentBucketName": {
       "usedBy": [
         {
@@ -150,6 +205,38 @@
         {
           "category": "function",
           "resourceName": "omniversListBuckets"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversSearchUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversSearchUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversSearchUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversSearchUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversUpsertUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversUpsertUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_omniversUpsertUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "omniversUpsertUser"
         }
       ]
     }
