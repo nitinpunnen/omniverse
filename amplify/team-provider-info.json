@@ -34,15 +34,15 @@
         },
         "omniversSearchUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/omniversSearchUser-364d6651786749787149-build.zip"
+          "s3Key": "amplify-builds/omniversSearchUser-52374f6848523061566b-build.zip"
         },
         "omniversGetUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/omniversGetUser-326d6a6a2f2b6b5a6742-build.zip"
+          "s3Key": "amplify-builds/omniversGetUser-75304679343964704561-build.zip"
         },
         "omniversUpsertUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/omniversUpsertUser-505537574f645a74434b-build.zip"
+          "s3Key": "amplify-builds/omniversUpsertUser-576f497958786a354c53-build.zip"
         }
       },
       "storage": {

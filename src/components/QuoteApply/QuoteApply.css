@@ -6,6 +6,14 @@
     min-height: 400px;
 }
 
-.MuiInputBase-input {
-    height: 3em !important;
+.input-form {
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.input-form > * {
+    margin: 10px 0 !important;
+    width: 100%;
 }

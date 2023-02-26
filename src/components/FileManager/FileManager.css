@@ -78,10 +78,10 @@
     font-size: 0.8em;
 }
 
-.MuiInputBase-input {
+/* .MuiInputBase-input {
     padding: 0 5px !important;
     font-size: 0.8em !important;
-}
+} */
 
 .MuiTreeItem-label {
     font-size: 0.8em !important;
