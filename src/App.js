@@ -14,6 +14,7 @@ import FileManager from "./components/FileManager/FileManager";
 import Home from "./components/Home/Home";
 import QuoteApply from "./components/QuoteApply/QuoteApply";
 import AgentDashboard from "./components/AgentDashboard/AgentDashboard";
+import { useTranslation } from "react-i18next";
 
 const App = ({ signOut, user }) => {
     const appTheme = createTheme({
@@ -32,7 +33,8 @@ const App = ({ signOut, user }) => {
 
     const [anchorAvatar, setAnchorAvatar] = React.useState(null);
     const avatarOpen = Boolean(anchorAvatar);
-    
+    const { t, i18n } = useTranslation();
+
     const handleAvatar = (event) => {
         setAnchorAvatar(event.currentTarget);
     };
@@ -48,7 +50,7 @@ const App = ({ signOut, user }) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-   
+
 
     return (
         <ThemeProvider theme={appTheme}>
@@ -68,7 +70,7 @@ const App = ({ signOut, user }) => {
                                 direction={{ base: 'row' }}
                                 style={{ alignItems: "center", margin: "0 auto" }}
                             >
-                                <Link className="Navbar-Item" to="/">HOME</Link>                                
+                                <Link className="Navbar-Item" to="/">HOME</Link>
                                 <Link className="Navbar-Item" to="/quoteApply">QUOTE & APPLY</Link>
                                 <Button className="Navbar-Item" id="basic-button"
                                     aria-controls={menuOpen ? 'basic-menu' : undefined}
@@ -118,9 +120,9 @@ const App = ({ signOut, user }) => {
                                         <MenuItem>Welcome {user.username}</MenuItem>
                                         <MenuItem onClick={handleAvatarClose}>
                                             <Button onClick={signOut}>Sign Out</Button>
-                                        </MenuItem>                                        
+                                        </MenuItem>
                                     </Menu>
-                                    </div>}
+                                </div>}
                                 {!user.username && <Button variant="outlined" style={{ width: '120px' }}>Sign In</Button>}
                             </Flex>
                         </Flex>

@@ -15,6 +15,7 @@ import Preferences from './Preferences';
 import './QuoteApply.css';
 import ReviewSign from './ReviewSign';
 import ShowAllQuotes from './ShowAllQuotes';
+import { useTranslation } from "react-i18next";
 
 const steps = ['Preferences', 'Personal Details', 'Your Health', 'Review'];
 
@@ -22,6 +23,7 @@ export default function QuoteApply() {
     const [activeStep, setActiveStep] = React.useState(0);
     const [showCustomer, setShowCustomer] = React.useState(false);
     let [userAttrs, setUserAttrs] = useState({});
+    const { t, i18n } = useTranslation();
 
     const handleNext = () => {
         handleSave();

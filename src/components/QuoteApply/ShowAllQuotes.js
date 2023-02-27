@@ -6,8 +6,6 @@ import {
     Flex,
     Table, TableBody, TableCell, TableHead, TableRow,
 } from '@aws-amplify/ui-react';
-import { faRotate } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SingleUserAttributes from "./SingleUserAttributes";
 
 const ShowAllQuotes = () => {

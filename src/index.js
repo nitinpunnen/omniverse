@@ -2,10 +2,11 @@ import React from 'react';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Amplify} from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
-import {render} from "react-dom";
+import { render } from "react-dom";
 import ReactDOM from 'react-dom/client';
+import './i18n';
 
 Amplify.configure(config);
 

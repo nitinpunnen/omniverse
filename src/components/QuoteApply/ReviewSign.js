@@ -1,9 +1,6 @@
 import React from "react";
 import "@aws-amplify/ui-react/styles.css";
-import TextField from '@mui/material/TextField';
-import { Button, Flex } from "@aws-amplify/ui-react";
-import { useState } from "react";
-import { API } from "aws-amplify";
+import { Flex } from "@aws-amplify/ui-react";
 import SingleUserAttributes from "./SingleUserAttributes";
 
 const ReviewSign = (props) => {

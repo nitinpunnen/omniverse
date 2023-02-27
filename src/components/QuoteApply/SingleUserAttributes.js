@@ -12,7 +12,7 @@ const SingleUserAttributes = (props) => {
     }, []);
 
     function showSelectedRow(userId) {
-        let userAttrs = customers.filter(customer => customer.userId == userId)[0];
+        let userAttrs = customers.filter(customer => customer.userId === userId)[0];
         setUserAttrs(userAttrs)
     }
 
