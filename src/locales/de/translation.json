@@ -31,5 +31,6 @@
     "health.drugUser": "Nehmen Sie verbotene Drogen?",
     "health.drugQuantity": "Wie oft konsumierst du drogen am tag",
     "health.alcoholUser": "Konsumierst du Alkohol",
-    "health.alcoholQuantity": "Wie viele Drinks trinken Sie durchschnittlich in einer Woche?"
+    "health.alcoholQuantity": "Wie viele Drinks trinken Sie durchschnittlich in einer Woche?",
+    "reviewSign.intro": "Lassen Sie uns die von Ihnen bereitgestellten Informationen überprüfen, bevor wir fortfahren"
 }

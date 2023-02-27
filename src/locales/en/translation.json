@@ -31,5 +31,6 @@
     "health.drugUser": "Do you use any restricted drugs?",
     "health.drugQuantity": "How often do you use drugs in a day",
     "health.alcoholUser": "Do you consume alcohol",
-    "health.alcoholQuantity": "How many drinks do you have on average in a week"
+    "health.alcoholQuantity": "How many drinks do you have on average in a week",
+    "reviewSign.intro": "Let's review the information you provided before we continue"
 }

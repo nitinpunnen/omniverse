@@ -31,5 +31,6 @@
     "health.drugUser": "¿Utiliza alguna droga restringida?",
     "health.drugQuantity": "¿Con qué frecuencia consume drogas en un día?",
     "health.alcoholUser": "¿Consumes alcohol?",
-    "health.alcoholQuantity": "¿Cuántos tragos tomas en promedio en una semana?"
+    "health.alcoholQuantity": "¿Cuántos tragos tomas en promedio en una semana?",
+    "reviewSign.intro": "Revisemos la información que proporcionó antes de continuar."
 }
