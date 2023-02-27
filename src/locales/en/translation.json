@@ -12,6 +12,7 @@
     "preferences.intro": "Let's get you a life insurance quote in seconds. Please provide your name and language preferences",
     "preferences.firstName": "First Name",
     "preferences.lastName": "Last Name",
+    "preferences.preferredLanguage": "Preferred Language",
     "personaldetails.intro": "Please provide your personal details",
     "personaldetails.dob": "Date of Birth",
     "personaldetails.address1": "Address Line 1",

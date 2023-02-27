@@ -1,5 +1,5 @@
 {
-    "quoteapply.title": "Quote & Apply",
+    "quoteapply.title": "Angebot & Bewerbung",
     "quoteapply.viewcustomers": "Kunden anzeigen",
     "quoteapply.createquote": "Angebot erstellen",
     "quoteapply.preferences": "Einstellungen",
@@ -12,6 +12,7 @@
     "preferences.intro": "Lassen Sie sich in Sekundenschnelle ein Angebot für eine Lebensversicherung erstellen. Bitte geben Sie Ihren Namen und Ihre bevorzugte Sprache an",
     "preferences.firstName": "Vorname",
     "preferences.lastName": "Familienname",
+    "preferences.preferredLanguage": "Bevorzugte Sprache",
     "personaldetails.intro": "Bitte geben Sie Ihre persönlichen Daten an",
     "personaldetails.dob": "Geburtsdatum",
     "personaldetails.address1": "Anschrift Zeile 1",

@@ -1,5 +1,5 @@
 {
-    "quoteapply.title": "Quote & Apply",
+    "quoteapply.title": "Cotizar y Aplicar",
     "quoteapply.viewcustomers": "Ver clientes",
     "quoteapply.createquote": "Crear cotización",
     "quoteapply.preferences": "Preferencias",
@@ -10,6 +10,7 @@
     "quoteapply.save": "Ahorrar",
     "quoteapply.next": "Próximo",
     "preferences.intro": "Vamos a obtener una cotización de seguro de vida en segundos. Proporcione su nombre y preferencias de idioma",
+    "preferences.preferredLanguage": "Idioma preferido",
     "preferences.firstName": "Nombre de pila",
     "preferences.lastName": "Apellido",
     "personaldetails.intro": "Por favor proporcione sus datos personales",

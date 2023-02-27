@@ -7,15 +7,25 @@ import {
     Table, TableBody, TableCell, TableHead, TableRow,
 } from '@aws-amplify/ui-react';
 import SingleUserAttributes from "./SingleUserAttributes";
+import { useTranslation } from "react-i18next";
 
 const ShowAllQuotes = () => {
     let [customers, setCustomers] = useState([]);
+    let [userAttrs, setUserAttrs] = useState({});
     const [showCustomerDetails, setShowCustomerDetails] = React.useState(false);
     const [userId, setUserId] = useState(0);
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         fetchUsers();
     }, []);
+
+    function showSelectedRow(userId) {
+        let userAttrs = customers.filter(customer => customer.userId === userId)[0];
+        setUserAttrs(userAttrs);
+        console.log("ShowAllQuotes - userAttrs ", userAttrs)
+        setShowCustomerDetails(true);
+    }
 
     async function fetchUsers() {
         const response = await API.get('omniversApi', '/api/searchUser', {
@@ -24,11 +34,6 @@ const ShowAllQuotes = () => {
         });
         const customers = response.data;
         setCustomers(customers)
-    }
-
-    function showSelectedRow(userId) {
-        setUserId(userId);
-        setShowCustomerDetails(true);
     }
 
     return (
@@ -44,10 +49,10 @@ const ShowAllQuotes = () => {
                 highlightOnHover="true">
                 <TableHead>
                     <TableRow>
-                        <TableCell as="th">First Name</TableCell>
-                        <TableCell as="th">Last Name</TableCell>
-                        <TableCell as="th">Preferred Language</TableCell>
-                        <TableCell as="th">Date of Birth</TableCell>
+                        <TableCell as="th">{t('preferences.firstName')}</TableCell>
+                        <TableCell as="th">{t('preferences.lastName')}</TableCell>
+                        <TableCell as="th">{t('preferences.preferredLanguage')}</TableCell>
+                        <TableCell as="th">{t('preferences.dob')}</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -71,8 +76,10 @@ const ShowAllQuotes = () => {
             </Table>}
             {showCustomerDetails &&
                 <Flex direction={{ base: 'column', large: 'column' }}>
-                    <SingleUserAttributes userId={userId} customers={customers} />
-                    <Button variant='outlined' onClick={() => setShowCustomerDetails(false)}>Close</Button>
+                    <SingleUserAttributes userAttrs={userAttrs} />
+                    <Flex direction={{ base: 'row', large: 'row' }} style={{ alignItems: "center", justifyContent: "center" }}>
+                        <Button variant='outlined' onClick={() => setShowCustomerDetails(false)}>Close</Button>
+                    </Flex>
                 </Flex>}
         </Flex>
     );

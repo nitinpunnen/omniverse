@@ -24,3 +24,16 @@
     margin: 10px 0 !important;
     width: 100%;
 }
+
+.user-details-grid {
+    width: 50% !important;
+    margin: 0 auto !important;
+}
+
+.user-details-grid>.attr-name {
+    text-align: right;
+}
+
+.user-details-grid>.attr-value {
+    font-weight: 700;
+}

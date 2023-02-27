@@ -29,7 +29,7 @@ const Preferences = (props) => {
                 direction={{ base: 'column', large: 'column' }}
                 className="input-form">
                 <TextField select name="preferredLanguage" defaultValue="en"
-                    label="Preferred Language" variant="outlined" color="success"
+                    label={t('preferences.preferredLanguage')} variant="outlined" color="success"
                     value={userAttrs.preferredLanguage} onChange={changeLanguage} >
                     <MenuItem value="en">English</MenuItem>
                     <MenuItem value="de">German</MenuItem>
