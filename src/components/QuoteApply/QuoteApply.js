@@ -7,8 +7,6 @@ import Stepper from '@mui/material/Stepper';
 import { API } from "aws-amplify";
 import * as React from 'react';
 import { useState } from "react";
-import BankingDetails from './BankingDetails';
-import BeneficieryDetails from './BeneficieryDetails';
 import HealthInformation from './HealthInformation';
 import PersonalDetails from './PersonalDetails';
 import Preferences from './Preferences';
@@ -17,13 +15,14 @@ import ReviewSign from './ReviewSign';
 import ShowAllQuotes from './ShowAllQuotes';
 import { useTranslation } from "react-i18next";
 
-const steps = ['Preferences', 'Personal Details', 'Your Health', 'Review'];
+
 
 export default function QuoteApply() {
     const [activeStep, setActiveStep] = React.useState(0);
     const [showCustomer, setShowCustomer] = React.useState(false);
     let [userAttrs, setUserAttrs] = useState({});
     const { t, i18n } = useTranslation();
+    const steps = [t('quoteapply.preferences'), t('quoteapply.personaldetails'), t('quoteapply.health'), t('quoteapply.review')];
 
     const handleNext = () => {
         handleSave();
@@ -66,13 +65,13 @@ export default function QuoteApply() {
             width="80%"
             style={{ display: "block", margin: "10px auto" }}
         >
-            <Flex direction={{ base: 'row', large: 'row' }}>
-                <Text style={{ flexGrow: 3, color: "#F56600", fontSize: "24px" }}>Quote & Apply</Text>
-                {!showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(true)}>View Customers</Button>}
-                {showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(false)}>Create a Quote</Button>}
+            <Flex direction={{ base: 'row', large: 'row' }} style={{ marginBottom: "20px" }}>
+                <Text style={{ flexGrow: 3, color: "#F56600", fontSize: "24px" }}>{t('quoteapply.title')}</Text>
+                {!showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(true)}>{t('quoteapply.viewcustomers')}</Button>}
+                {showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(false)}>{t('quoteapply.createquote')}</Button>}
             </Flex>
             {!showCustomer && <Box sx={{ width: '100%' }}>
-                {/* <Stepper activeStep={activeStep} alternativeLabel>
+                <Stepper activeStep={activeStep} alternativeLabel>
                     {steps.map((label, index) => {
                         const stepProps = {};
                         const labelProps = {};
@@ -82,7 +81,7 @@ export default function QuoteApply() {
                             </Step>
                         );
                     })}
-                </Stepper> */}
+                </Stepper>
                 <Box className="user-details">
                     {activeStep === 0 && <Preferences userAttrs={userAttrs} />}
                     {activeStep === 1 && <PersonalDetails userAttrs={userAttrs} />}
@@ -92,20 +91,20 @@ export default function QuoteApply() {
                         <Button color="inherit" variant='outlined'
                             disabled={activeStep === 0}
                             onClick={handleBack} sx={{ mr: 1 }}>
-                            Back
+                            {t('quoteapply.back')}
                         </Button>
                         <Box sx={{ flex: '1 1 auto' }} />
                         {activeStep === 0 && <Button variant='outlined' onClick={handleSave} style={{ margin: "0 5px" }}>
-                            Save
+                            {t('quoteapply.save')}
                         </Button>}
                         {activeStep === 0 && <Button variant='outlined' onClick={() => { handleNext(); }}>
-                            Next
+                            {t('quoteapply.next')}
                         </Button>}
                         {activeStep > 0 && <Button variant='outlined' onClick={handleSave} style={{ margin: "0 5px" }}>
-                            Save
+                            {t('quoteapply.save')}
                         </Button>}
                         {activeStep > 0 && activeStep < steps.length - 1 && <Button variant='outlined' onClick={() => { handleNext(); }}>
-                            Next
+                            {t('quoteapply.next')}
                         </Button>}
                     </Box>
                 </Box>
