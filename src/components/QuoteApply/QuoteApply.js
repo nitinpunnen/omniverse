@@ -11,11 +11,12 @@ import BankingDetails from './BankingDetails';
 import BeneficieryDetails from './BeneficieryDetails';
 import HealthInformation from './HealthInformation';
 import PersonalDetails from './PersonalDetails';
+import Preferences from './Preferences';
 import './QuoteApply.css';
 import ReviewSign from './ReviewSign';
-import ShowQuoteDetails from './ShowQuoteDetails';
+import ShowAllQuotes from './ShowAllQuotes';
 
-const steps = ['Personal Details', 'Your Health', 'Banking Information', 'Beneficiery', 'Review and Sign'];
+const steps = ['Preferences', 'Personal Details', 'Your Health', 'Review'];
 
 export default function QuoteApply() {
     const [activeStep, setActiveStep] = React.useState(0);
@@ -23,6 +24,7 @@ export default function QuoteApply() {
     let [userAttrs, setUserAttrs] = useState({});
 
     const handleNext = () => {
+        handleSave();
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
@@ -30,16 +32,11 @@ export default function QuoteApply() {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleCreate = () => {
-        setActiveStep(0);
-    };
-
-    const handleInsert = () => {
-        upsertUser("Create");
-    };
-
-    const handleUpdate = () => {
-        upsertUser("Update");
+    const handleSave = () => {
+        if (userAttrs.hasOwnProperty('userId'))
+            upsertUser("Update");
+        else
+            upsertUser('Create');
     };
 
     async function upsertUser(action) {
@@ -56,7 +53,8 @@ export default function QuoteApply() {
             response: true,
             body: metadataJson
         });
-        console.log(response)
+        userAttrs['userId'] = response.data
+        console.log(userAttrs)
     }
 
     return (
@@ -66,10 +64,13 @@ export default function QuoteApply() {
             width="80%"
             style={{ display: "block", margin: "10px auto" }}
         >
-            <Text style={{ flexGrow: 3, color: "#F56600", fontSize: "24px", marginBottom: "20px" }}>Quote & Apply</Text>
-            <Button onClick={() => setShowCustomer(true)}>Fetch</Button>
+            <Flex direction={{ base: 'row', large: 'row' }}>
+                <Text style={{ flexGrow: 3, color: "#F56600", fontSize: "24px" }}>Quote & Apply</Text>
+                {!showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(true)}>View Customers</Button>}
+                {showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(false)}>Create a Quote</Button>}
+            </Flex>
             {!showCustomer && <Box sx={{ width: '100%' }}>
-                <Stepper activeStep={activeStep} alternativeLabel>
+                {/* <Stepper activeStep={activeStep} alternativeLabel>
                     {steps.map((label, index) => {
                         const stepProps = {};
                         const labelProps = {};
@@ -79,13 +80,12 @@ export default function QuoteApply() {
                             </Step>
                         );
                     })}
-                </Stepper>
+                </Stepper> */}
                 <Box className="user-details">
-                    {activeStep === 0 && <PersonalDetails userAttrs={userAttrs}/>}
-                    {activeStep === 1 && <HealthInformation />}
-                    {activeStep === 2 && <BankingDetails />}
-                    {activeStep === 3 && <BeneficieryDetails />}
-                    {activeStep === 4 && <ReviewSign />}
+                    {activeStep === 0 && <Preferences userAttrs={userAttrs} />}
+                    {activeStep === 1 && <PersonalDetails userAttrs={userAttrs} />}
+                    {activeStep === 2 && <HealthInformation userAttrs={userAttrs} />}
+                    {activeStep === 3 && <ReviewSign userAttrs={userAttrs} />}
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2, margin: '10px 0', justifyContent: 'space-between' }}>
                         <Button color="inherit" variant='outlined'
                             disabled={activeStep === 0}
@@ -93,22 +93,22 @@ export default function QuoteApply() {
                             Back
                         </Button>
                         <Box sx={{ flex: '1 1 auto' }} />
-                        {activeStep === 0 && <Button variant='outlined' onClick={handleInsert} style={{margin: "0 5px"}}>
+                        {activeStep === 0 && <Button variant='outlined' onClick={handleSave} style={{ margin: "0 5px" }}>
                             Save
                         </Button>}
-                        {activeStep === 0 && <Button variant='outlined' onClick={() => {handleInsert(); handleNext();}}>
+                        {activeStep === 0 && <Button variant='outlined' onClick={() => { handleNext(); }}>
                             Next
                         </Button>}
-                        {activeStep > 0 && <Button variant='outlined' onClick={handleUpdate} style={{margin: "0 5px"}}>
+                        {activeStep > 0 && <Button variant='outlined' onClick={handleSave} style={{ margin: "0 5px" }}>
                             Save
                         </Button>}
-                        {activeStep > 0 && activeStep < steps.length - 1 && <Button variant='outlined' onClick={() => {handleUpdate(); handleNext();}}>
+                        {activeStep > 0 && activeStep < steps.length - 1 && <Button variant='outlined' onClick={() => { handleNext(); }}>
                             Next
                         </Button>}
                     </Box>
                 </Box>
             </Box>}
-            {showCustomer && <ShowQuoteDetails></ShowQuoteDetails>}
+            {showCustomer && <ShowAllQuotes></ShowAllQuotes>}
         </Flex>
     );
 }

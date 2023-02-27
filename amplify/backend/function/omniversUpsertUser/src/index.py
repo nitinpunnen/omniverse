@@ -16,23 +16,45 @@ except Exception:
 def handler(event, context):
   body = json.loads(event["body"])
   attributes = body["Attributes"]
-  print("attributes ", attributes)
+  action = body["Action"]
 
-  columnNames = []
-  values = []
-  for key in attributes:
-    columnNames.append(key);
-    values.append("'"+attributes[key]+"'")
-    print(', '.join(columnNames))
-    print(', '.join(values))
+  if action == 'Create':
+    columnNames = []
+    values = []
+    for key in attributes:
+      columnNames.append(key);
+      values.append("'"+attributes[key]+"'")
 
-  stmt = "INSERT INTO User (" + (', '.join(columnNames)) + ") VALUES (" + (', '.join(values)) + ")"
-  print(stmt)
+    stmt = "INSERT INTO User (" + (', '.join(columnNames)) + ") VALUES (" + (', '.join(values)) + ")"
+    print(stmt)
+    
+    with conn.cursor() as cur:
+      # Enter the query that you want to execute
+      conn.begin()
+      cur.execute(stmt) 
+      cur.execute('SELECT LAST_INSERT_ID()')
+      rowid = cur.fetchone()[0]     
+      conn.commit()
+    conn.commit()
   
-  with conn.cursor() as cur:
-    # Enter the query that you want to execute
-    cur.execute(stmt) 
-  conn.commit()            
+  elif action == 'Update':
+      print(attributes)
+      updateStr = ''
+      for index, key in enumerate(attributes):
+        if key != 'userId':
+          updateStr += key+"='"+str(attributes[key])+"'"          
+          #Ignore userId
+          if index < len(attributes) - 1:
+            updateStr += ','
+        print(updateStr)
+
+      stmt = "Update User set " + updateStr + " where userId=" + str(attributes['userId'])  
+      print(stmt)
+      rowid = attributes['userId'] 
+      with conn.cursor() as cur:
+      # Enter the query that you want to execute
+        cur.execute(stmt) 
+      conn.commit()
   
   return {
       'statusCode': 200,
@@ -41,5 +63,5 @@ def handler(event, context):
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
       },
-      'body': 'Upserted'
+      'body': rowid
   }

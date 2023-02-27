@@ -1,5 +1,6 @@
 import { Flex } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import React from "react";
 
@@ -12,16 +13,26 @@ const HealthInformation = (props) => {
 
     return (
         <Flex
-            direction={{ base: 'column', large: 'column' }}
-            className="input-form">
-            <TextField name="firstName" label="First Name" variant="outlined" color="success" value={userAttrs.firstName} onChange={handleFormEdit} />
-            <TextField name="lastName" placeholder="Last Name" variant="outlined" color="success" value={userAttrs.lastName} onChange={handleFormEdit} />
-            <TextField name="addressLine1" placeholder="Address Line 1" variant="outlined" color="success" value={userAttrs.addressLine1} onChange={handleFormEdit} />
-            <TextField name="addressLine2" placeholder="Address Line 2" variant="outlined" color="success" value={userAttrs.addressLine2} onChange={handleFormEdit} />
-            <TextField name="city" placeholder="City" variant="outlined" color="success" value={userAttrs.city} onChange={handleFormEdit} />
-            <Flex direction={{ base: 'row', large: 'row' }}>
-                <TextField name="state" placeholder="State" variant="outlined" color="success" value={userAttrs.state} onChange={handleFormEdit} />
-                <TextField name="postalCode" placeholder="Postal Code" variant="outlined" color="success" value={userAttrs.postalCode} onChange={handleFormEdit} />
+            direction={{ base: 'column', large: 'column' }}>
+            <span className="page-intro">Please provide your health information</span>
+            <Flex
+                direction={{ base: 'column', large: 'column' }}
+                className="input-form">
+                <TextField select name="tobaccoUser" label="Are you a tobacco user?" variant="outlined" color="success" value={userAttrs.tobaccoUser} onChange={handleFormEdit} >
+                    <MenuItem key="Yes" value="Yes">Yes</MenuItem>
+                    <MenuItem key="No" value="No">No</MenuItem>
+                </TextField>
+                <TextField name="tobaccoUseFrequency" label="How often do you use tobacco in day?" variant="outlined" color="success" value={userAttrs.tobaccoUseFrequency} onChange={handleFormEdit} />
+                <TextField select name="drugUser" label="Do you use any restricted drugs?" variant="outlined" color="success" value={userAttrs.drugUser} onChange={handleFormEdit} >
+                    <MenuItem key="Yes" value="Yes">Yes</MenuItem>
+                    <MenuItem key="No" value="No">No</MenuItem>
+                </TextField>
+                <TextField name="drugUseFrequency" label="How often do you use drugs in a day?" variant="outlined" color="success" value={userAttrs.drugUseFrequency} onChange={handleFormEdit} />
+                <TextField select name="alcoholUser" label="Do you consume alcohol?" variant="outlined" color="success" value={userAttrs.alcoholUser} onChange={handleFormEdit} >
+                    <MenuItem key="Yes" value="Yes">Yes</MenuItem>
+                    <MenuItem key="No" value="No">No</MenuItem>
+                </TextField>
+                <TextField name="alcoholUseFrequency" label="How many drinks do you have on average a week?" variant="outlined" color="success" value={userAttrs.alcoholUseFrequency} onChange={handleFormEdit} />
             </Flex>
         </Flex>
     );

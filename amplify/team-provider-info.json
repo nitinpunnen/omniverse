@@ -34,7 +34,7 @@
         },
         "omniversSearchUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/omniversSearchUser-52374f6848523061566b-build.zip"
+          "s3Key": "amplify-builds/omniversSearchUser-3879736d725968456b75-build.zip"
         },
         "omniversGetUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
@@ -42,7 +42,7 @@
         },
         "omniversUpsertUser": {
           "deploymentBucketName": "amplify-amplifyd223325d03444-staging-164611-deployment",
-          "s3Key": "amplify-builds/omniversUpsertUser-576f497958786a354c53-build.zip"
+          "s3Key": "amplify-builds/omniversUpsertUser-7a747a6f544e79687464-build.zip"
         }
       },
       "storage": {

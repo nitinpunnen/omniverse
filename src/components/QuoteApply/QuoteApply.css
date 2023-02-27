@@ -3,17 +3,24 @@
 }
 
 .user-details {
-    min-height: 400px;
+    min-height: 300px;
+}
+
+.page-intro {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto 5px auto;
+    font-size: 20px;
 }
 
 .input-form {
-    margin: 50px auto;
+    margin: 10px auto;
     justify-content: space-between;
     align-items: center;
     width: 40%;
 }
 
-.input-form > * {
+.input-form>* {
     margin: 10px 0 !important;
     width: 100%;
 }
