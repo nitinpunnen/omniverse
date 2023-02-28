@@ -14,8 +14,8 @@ import './QuoteApply.css';
 import ReviewSign from './ReviewSign';
 import ShowAllQuotes from './ShowAllQuotes';
 import { useTranslation } from "react-i18next";
-
-
+import MenuItem from '@mui/material/MenuItem';
+import TextField from '@mui/material/TextField';
 
 export default function QuoteApply() {
     const [activeStep, setActiveStep] = React.useState(0);
@@ -39,6 +39,16 @@ export default function QuoteApply() {
         else
             upsertUser('Create');
     };
+
+    const changeLanguage = (event) => {
+        i18n.changeLanguage(event.target.value);
+        console.log(event.target.value)
+        handleFormEdit(event);
+    };
+
+    const handleFormEdit = (event) => {
+        userAttrs[event.target.name] = event.target.value;
+    }
 
     async function upsertUser(action) {
         const metadataJson = {
@@ -67,6 +77,14 @@ export default function QuoteApply() {
         >
             <Flex direction={{ base: 'row', large: 'row' }} style={{ marginBottom: "20px" }}>
                 <Text style={{ flexGrow: 3, color: "#F56600", fontSize: "24px" }}>{t('quoteapply.title')}</Text>
+                <TextField select name="preferredLanguage" defaultValue="en"
+                    label={t('preferences.preferredLanguage')} variant="outlined" color="success"
+                    value={userAttrs.preferredLanguage} onChange={changeLanguage} >
+                    <MenuItem value="en">English</MenuItem>
+                    <MenuItem value="de">German</MenuItem>
+                    <MenuItem value="es">Spanish</MenuItem>
+                    <MenuItem value="hn">Hindi</MenuItem>
+                </TextField>
                 {!showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(true)}>{t('quoteapply.viewcustomers')}</Button>}
                 {showCustomer && <Button variant='outlined' onClick={() => setShowCustomer(false)}>{t('quoteapply.createquote')}</Button>}
             </Flex>
